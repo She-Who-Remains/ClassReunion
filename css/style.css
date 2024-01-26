@@ -1,0 +1,224 @@
+/* OPEN ROOT  */
+/* CLOSE ROOT */
+
+/* OPEN GENERAL */
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden{
+    display: none;
+}
+/* CLOSE GENERAL */
+
+/* OPEN HEADER */
+header{
+    background-image: url(../images/foresthill_mmg.jpg);
+    /* background-color: blue; */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+
+
+/* NEED TO FIGUIRE OUT WHY THIS WORKS SO WELL */
+header::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(12, 12, 133);
+    opacity: .75;
+}
+.top--nav{
+    margin-top: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+.top--nav a {
+    color: white;
+}
+.countdown--container{
+    width: 100vw;
+    height: 100vh;
+    /* padding: 0 8%; */
+    /* border: 2px solid pink; */
+}
+
+.content{
+    /* top: 65%;
+    right: 40%; */
+    position: absolute;
+    /* transform: translateY(-75%); */
+    padding: 15px;
+    border: 5px solid rgb(177, 25, 25);
+    color: #fff;
+}
+
+.content--p-top{
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+
+}
+.content h1{
+    /* font-size: 165px; */
+    font-size: 400%;
+    font-family: 'Rochester', cursive;
+
+}
+.countdown--div{
+    
+    font-family: 'Oswald', sans-serif;
+}
+
+.countdown-time{
+    /* font-size: 90px; */
+    font-size: 400%;
+    
+    @media (max-width: 900px) {
+        font-size: 175%;
+    }
+}
+
+.countdown--names {
+    font-size: 180%;
+    padding-right: 20px;
+    @media (max-width: 900px) {
+        font-size: 94%;
+    }
+}
+/* CLOSE HEADER */
+
+/* OPEN SECTION 1  */
+.section--1{
+    background-color: whitesmoke;
+    /* background-color: rgb(177, 25, 25); */
+    /* background-color: rgb(12, 12, 133); */
+}
+h2{
+    font-family: 'Rochester', cursive;
+    font-size: 300%;
+    color: rgb(177, 25, 25);
+    position: relative;
+    /* border-bottom: 2px solid rgb(12, 12, 133) ; */
+}
+
+.event--paragraph{
+    font-family: 'Oswald', sans-serif;
+    color: rgb(177, 25, 25);
+}
+/* CLOSE SECTION 1 */
+
+.event--card{
+    padding-right: 5px;
+    color: rgb(177, 25, 25);
+}
+
+.event--card:nth-child(3){
+    /* border:2px solid green; */
+    padding: 0;
+}
+
+.event--card ul{
+    list-style: none;
+}
+/* CLOSE SECTION 1 */
+
+/* OPEN SECTION 2 */
+.section--2{
+    background-color: rgb(177, 25, 25);
+}
+.section--2 h2{
+    color: white;
+}
+.classmate {
+    padding-right: 10px;
+    color: white;
+    @media (max-width: 900px) {
+       margin: 0 auto;
+    }
+}
+.first--name{
+    font-family: 'Rochester', cursive;
+    font-size: 34px;
+
+}
+
+.last--name{
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+}
+
+.classmates--see--more--btn{
+    /* border: 2px white ; */
+    color: white;
+}
+
+.classmates--see--more--btn:hover{
+    color: rgb(12, 12, 133);
+}
+
+
+.classmates2{
+    display: none;
+}
+
+/* CLOSE SECTION 2 */
+
+
+
+/* OPEN SECTION 3 */
+.section--3 img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+.grid-wrapper > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-wrapper > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius:5px ;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+}
+
+.grid-wrapper .wide{
+    grid-column: span 2;
+}
+
+.grid-wrapper .tall{
+    grid-column: span 2;
+}
+
+.grid-wrapper .big{
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.send--photos--btn{
+    margin: 0 auto;
+}
+/* CLOSE SECTION 3 */
+
+
+/* OPEN FOOTER */
+/* CLOSE FOOTER */
