@@ -144,6 +144,10 @@ h2{
        margin: 0 auto;
     }
 }
+.classmate img {
+    width: 250px;
+    height: 250px;
+}
 .first--name{
     font-family: 'Rochester', cursive;
     font-size: 34px;
