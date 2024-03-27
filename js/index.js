@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "images/IMG_0854.jpeg",
         "images/IMG_0853.jpeg",
         "images/IMG_0852.jpeg",
-        "images/IMG_0851.jpeg",
+        // "images/IMG_0851.jpeg",
         "images/IMG_0850.jpeg",
         "images/IMG_0849.jpeg",
         "images/IMG_0848.jpeg",
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "images/IMG_0834.jpeg",
         "images/IMG_0779.jpeg",
         "images/IMG_0832.jpeg",
-        "images/IMG_0931.jpeg",
+        // "images/IMG_0931.jpeg",
         "images/IMG_0828.jpeg",
         "images/IMG_0830.jpeg",
         "images/IMG_0829.jpeg",
@@ -161,7 +161,6 @@ document.addEventListener("DOMContentLoaded", function() {
         "images/IMG_0821.jpeg",
         "images/IMG_0820.jpeg",
         "images/IMG_0819.jpeg",
-
         "images/IMG_0749.jpeg",
         "images/IMG_0750.jpeg",
         "images/IMG_0751.jpeg",
@@ -180,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "images/IMG_0767.jpeg",
         "images/IMG_0766.jpeg",
         "images/IMG_0765.jpeg",
-        "images/IMG_0768.jpeg",
+        // "images/IMG_0768.jpeg",
         "images/IMG_0769.jpeg",
         "images/IMG_0770.jpeg",
 
@@ -199,18 +198,53 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Reference to the image grid container
     var imageGridContainer = document.getElementById("imageGrid");
+    var showMoreButton = document.getElementById("showMoreButton");
+    var showingAll = false;
 
     // Loop through the image sources and create HTML elements dynamically
-    imageSources.forEach(function(imageSource) {
-        var imageElement = document.createElement("div");
-        var img = document.createElement("img");
-        img.src = imageSource;
-        img.classList.add("img-fluid");
-        img.alt = "";
+    // imageSources.forEach(function(imageSource) {
+    //     var imageElement = document.createElement("div");
+    //     var img = document.createElement("img");
+    //     img.src = imageSource;
+    //     img.classList.add("img-fluid");
+    //     img.alt = "";
 
         // Append the image to the grid container
-        imageElement.appendChild(img);
-        imageGridContainer.appendChild(imageElement);
-    });
+        // imageElement.appendChild(img);
+        // imageGridContainer.appendChild(imageElement);
+
+        function renderImages() {
+            // Clear previous images
+            imageGridContainer.innerHTML = '';
+    
+            // Determine the number of images to show
+            var limit = showingAll ? imageSources.length : 5;
+    
+            // Loop through the image sources and create HTML elements dynamically
+            imageSources.slice(0, limit).forEach(function(imageSource) {
+                var imageElement = document.createElement("div");
+                var img = document.createElement("img");
+                img.src = imageSource;
+                img.classList.add("img-fluid");
+                img.alt = "";
+    
+                // Append the image to the grid container
+                imageElement.appendChild(img);
+                imageGridContainer.appendChild(imageElement);
+            });
+    
+            // Update button text
+            showMoreButton.textContent = showingAll ? 'Show Less' : 'Show More';
+        }
+    
+        // Initial rendering
+        renderImages();
+    
+        // Button click event listener
+        showMoreButton.addEventListener('click', function() {
+            showingAll = !showingAll;
+            renderImages();
+        });
+    // });
 });
 
